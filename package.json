@@ -2,7 +2,7 @@
   "name": "@d10f/digital",
   "version": "1.0.0",
   "description": "Parses a string of digital data storage to a number in bytes.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "tsnd --respawn --transpile-only src/index.ts",
     "build": "rimraf dist && swc src/index.ts -o dist/index.js",
