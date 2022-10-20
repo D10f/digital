@@ -1,0 +1,32 @@
+{
+  "name": "@d10f/digital",
+  "version": "1.0.0",
+  "description": "Parses a string of digital data storage to a number in bytes.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsnd --respawn --transpile-only src/index.ts",
+    "build": "rimraf dist && swc src/index.ts -o dist/index.js",
+    "test": "vitest"
+  },
+  "keywords": [
+    "parse",
+    "data",
+    "storage",
+    "unit",
+    "convert"
+  ],
+  "author": "d10f",
+  "license": "MIT",
+  "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.3.9",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "eslint": "^8.25.0",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4",
+    "vitest": "^0.24.3"
+  }
+}
