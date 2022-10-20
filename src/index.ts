@@ -7,6 +7,13 @@ export default function (input: string) {
     );
   }
 
+  // If a string of integers was provided, return it as is
+  // e.g.: '123' -> 123
+  // e.g.: '123.95' -> 123
+  if (match[1] === input) {
+    return parseInt(input);
+  }
+
   const amount = _parseAmount(match);
   const unit = _parseUnit(match);
 
@@ -21,9 +28,11 @@ function _parseAmount(match: RegExpMatchArray) {
 }
 
 function _parseUnit(match: RegExpMatchArray) {
-  return match[3].startsWith('byte')
-    ? match[3]
-    : match[3].toLowerCase().replace(/bytes?/, '');
+  // 4th capture group refers to the unit
+  // e.g.: bytes, kilobytes, megabytes...
+  return match[4].startsWith('byte')
+    ? match[4]
+    : match[4].toLowerCase().replace(/bytes?/, '');
 }
 
 function _getMultiplier(unit: string) {
@@ -82,6 +91,6 @@ const binaryUnits = [
 const units = decimalUnits.concat(binaryUnits);
 
 const re = new RegExp(
-  `^(\\d+(\\.\\d+)?)\\s?(${units.join('|')})(s|bytes?)?$`,
+  `^(\\d+(\\.\\d+)?)\\s?((${units.join('|')})(s|bytes?)?)?$`,
   'i'
 );

@@ -88,3 +88,11 @@ test('should error out on malformed strings', () => {
   expect(() => parse('5_megabytes')).toThrow();
   expect(() => parse('5megabytessdfsfd')).toThrow();
 });
+
+test('should treat integers as bytes', () => {
+  expect(parse('123')).toBe(123);
+});
+
+test('should treat float-only inputs as integers', () => {
+  expect(parse('123.95')).toBe(123);
+});
