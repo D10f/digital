@@ -1,5 +1,5 @@
 import { test, expect } from 'vitest';
-import { parse } from '../src/index';
+import parse from '../src/index';
 
 function randomInt(min = 0, max = 100) {
   return Math.floor(Math.random() * max + min);

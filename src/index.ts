@@ -1,4 +1,4 @@
-export function parse(input: string) {
+export default function (input: string) {
   const match = input.trim().match(re);
 
   if (!match) {
