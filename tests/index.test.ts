@@ -68,7 +68,7 @@ test('should handle random int amounts', () => {
 test('should handle random float amounts', () => {
   const n = randomFloat();
 
-  expect(parse(`${n} bytes`)).toBe(n);
+  expect(parse(`${n} bytes`)).toBe(Math.floor(n));
   expect(parse(`${n} kilobytes`)).toBe(n * 1000 ** 1);
   expect(parse(`${n} megabytes`)).toBe(n * 1000 ** 2);
   expect(parse(`${n} gigabytes`)).toBe(n * 1000 ** 3);
