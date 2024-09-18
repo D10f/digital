@@ -13,10 +13,10 @@ export default function parseBits(input: string) {
     \s*
     (?:
       (?<decimal>
-        (?:[kmgtpez]b)|
+        (?:[kmgtpezy]b)|
         (?:kilo|mega|giga|tera|peta|exa|zetta|yotta)bytes?)|
       (?<binary>
-        (?:[kmgtpez]ib)|
+        (?:[kmgtpezy]ib)|
         (?:kibi|mebi|gibi|tebi|pebi|exbi|zebi|yobi)bytes?)|
       (?:bytes?|b)
     )?

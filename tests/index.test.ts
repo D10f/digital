@@ -16,6 +16,9 @@ test('should convert shorthand decimal units accurately', () => {
   expect(parse('1Gb')).toBe(1000 ** 3);
   expect(parse('1Tb')).toBe(1000 ** 4);
   expect(parse('1Pb')).toBe(1000 ** 5);
+  expect(parse('1Eb')).toBe(1000 ** 6);
+  expect(parse('1Zb')).toBe(1000 ** 7);
+  expect(parse('1Yb')).toBe(1000 ** 8);
 });
 
 test('should convert fully named decimal units', () => {
@@ -25,6 +28,9 @@ test('should convert fully named decimal units', () => {
   expect(parse('1 gigabyte')).toBe(1000 ** 3);
   expect(parse('1 terabyte')).toBe(1000 ** 4);
   expect(parse('1 petabyte')).toBe(1000 ** 5);
+  expect(parse('1 exabyte')).toBe(1000 ** 6);
+  expect(parse('1 zettabyte')).toBe(1000 ** 7);
+  expect(parse('1 yottabyte')).toBe(1000 ** 8);
 });
 
 test('should convert binary units accurately', () => {
@@ -34,6 +40,9 @@ test('should convert binary units accurately', () => {
   expect(parse('1Gib')).toBe(1024 ** 3);
   expect(parse('1Tib')).toBe(1024 ** 4);
   expect(parse('1Pib')).toBe(1024 ** 5);
+  expect(parse('1Eib')).toBe(1024 ** 6);
+  expect(parse('1Zib')).toBe(1024 ** 7);
+  expect(parse('1Yib')).toBe(1024 ** 8);
 });
 
 test('should convert fully named binary units', () => {
@@ -43,6 +52,9 @@ test('should convert fully named binary units', () => {
   expect(parse('1 gibibyte')).toBe(1024 ** 3);
   expect(parse('1 tebibyte')).toBe(1024 ** 4);
   expect(parse('1 pebibyte')).toBe(1024 ** 5);
+  expect(parse('1 exbibyte')).toBe(1024 ** 6);
+  expect(parse('1 zebibyte')).toBe(1024 ** 7);
+  expect(parse('1 yobibyte')).toBe(1024 ** 8);
 });
 
 test('should handle zero amounts correctly', () => {
@@ -52,6 +64,9 @@ test('should handle zero amounts correctly', () => {
   expect(parse('0Gb')).toBe(0);
   expect(parse('0Tb')).toBe(0);
   expect(parse('0Pb')).toBe(0);
+  expect(parse('0Eb')).toBe(0);
+  expect(parse('0Zb')).toBe(0);
+  expect(parse('0Yb')).toBe(0);
 });
 
 test('should handle random int amounts', () => {
@@ -63,6 +78,9 @@ test('should handle random int amounts', () => {
   expect(parse(`${n} gigabytes`)).toBe(n * 1000 ** 3);
   expect(parse(`${n} terabytes`)).toBe(n * 1000 ** 4);
   expect(parse(`${n} petabytes`)).toBe(n * 1000 ** 5);
+  expect(parse(`${n} exabytes`)).toBe(n * 1000 ** 6);
+  expect(parse(`${n} zettabytes`)).toBe(n * 1000 ** 7);
+  expect(parse(`${n} yottabytes`)).toBe(n * 1000 ** 8);
 });
 
 test('should handle random float amounts', () => {
@@ -74,6 +92,9 @@ test('should handle random float amounts', () => {
   expect(parse(`${n} gigabytes`)).toBe(n * 1000 ** 3);
   expect(parse(`${n} terabytes`)).toBe(n * 1000 ** 4);
   expect(parse(`${n} petabytes`)).toBe(n * 1000 ** 5);
+  expect(parse(`${n} exabytes`)).toBe(n * 1000 ** 6);
+  expect(parse(`${n} zettabytes`)).toBe(n * 1000 ** 7);
+  expect(parse(`${n} yottabytes`)).toBe(n * 1000 ** 8);
 });
 
 test('should error out on negative numbers', () => {
