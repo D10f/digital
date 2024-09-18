@@ -3,7 +3,19 @@ type RegExpCaptureGroups = {
   [key: string]: string | undefined;
 };
 
-export default function parseBits(input: string) {
+/**
+ * Parses the input string into a byte amount. Supports decimal and
+ * binary units of measurement, by simply providing the nomenclature.
+ *
+ * @param input string representing a byte amount.
+ *
+ * @example
+ * parseBytes('23 kilobytes')   // 23000
+ * parseBytes('23 kb')          // 23000
+ * parseBytes('23 kibibytes')   // 23552
+ * parseBytes('23 kib')         // 23552
+ */
+export default function parseBytes(input: string) {
   if (!input) {
     throw new Error('Invalid input.');
   }
