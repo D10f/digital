@@ -26,4 +26,5 @@ parse('12.5 Gib');
 
 ### TODO:
 
+- [X] Support for `exabytes`, `zettabytes` and `yottabytes` (small amounts only).
 - [ ] Support for BigInt returns `exabytes`, `zettabytes` and `yottabytes`.
