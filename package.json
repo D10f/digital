@@ -1,7 +1,7 @@
 {
     "author": "d10f",
     "name": "@d10f/digital",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Parses a string of digital data storage to a number in bytes.",
     "license": "MIT",
     "repository": {
