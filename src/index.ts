@@ -1,3 +1,5 @@
+import { regex } from '@d10f/regex';
+
 type RegExpCaptureGroups = {
   value: string;
   [key: string]: string | undefined;
@@ -54,26 +56,4 @@ export default function parseBytes(input: string) {
   }
 
   return Math.floor(parseFloat(value) * system ** exponent);
-}
-// https://stackoverflow.com/questions/12317049/how-to-split-a-long-regular-expression-into-multiple-lines-in-javascript
-//build regexes without worrying about
-// - double-backslashing
-// - adding whitespace for readability
-// - adding in comments
-let clean = (piece: string) =>
-  piece
-    .replace(
-      /((^|\n)(?:[^\/\\]|\/[^*\/]|\\.)*?)\s*\/\*(?:[^*]|\*[^\/])*(\*\/|)/g,
-      '$1'
-    )
-    .replace(/((^|\n)(?:[^\/\\]|\/[^\/]|\\.)*?)\s*\/\/[^\n]*/g, '$1')
-    .replace(/\n\s*/g, '');
-
-function regex({ raw }: TemplateStringsArray, ...interpolations: string[]) {
-  return new RegExp(
-    interpolations.reduce(
-      (regex, insert, index) => regex + insert + clean(raw[index + 1]),
-      clean(raw[0])
-    )
-  );
 }
